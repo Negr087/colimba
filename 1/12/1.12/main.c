@@ -9,10 +9,14 @@ int main()
     int state = OUT;
 
     while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\n' || c == '\t')
-        state = OUT; {
-        if (state == OUT)
-        state = IN;
+        if (c == ' ' || c == '\n' || c == '\t'){
+        else if (state = IN); {
+                putchar('\n');
+                state = OUT;
+    }
+    } else {
+    putchar(c);
+    state = IN;
     }
     }
     return 0;
