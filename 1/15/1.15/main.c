@@ -1,30 +1,26 @@
 #include <stdio.h>
 
-/* Function to calculate power */
-double power(double base, int exponent) {
-    double result = 1.0;
-    for (int i = 0; i < exponent; i++) {
-            result *= base;
-    }
-    return result;
-    }
+#define STEP 20
+#define MAXF 300
+
+float tempC(float fahr);
 
 int main()
 {
-    double fahr, celsius;
-    int lower, upper, step;
-
-    lower = 0;     /* lower limit of temperature table */
-    upper = 300;   /* upper limit */
-    step = 20;     /* step size */
-
-    printf("Table of Fahrenheit and Celsius\n"); /* Heading */
-
-    fahr = lower;
-    while (fahr <= upper) {
-        celsius = power(5.0, 9) * (fahr - 32.0);
-        printf("%3.0f %6.1f\n", fahr, celsius);
-        fahr = fahr + step;
+    float fahr;
+    fahr = 0;
+    while(fahr <= MAXF)
+    {
+        printf("%3.1f \t %6.3f\n", fahr, tempC(fahr));
+        fahr = fahr + STEP;
     }
     return 0;
 }
+
+float tempC(float fahr)
+{
+    float c;
+    c = (5.0 / 9.0)*(fahr - 32);
+    return c;
+}
+
