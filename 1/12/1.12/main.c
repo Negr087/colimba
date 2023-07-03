@@ -9,15 +9,21 @@ int main()
     int state = OUT;
 
     while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\n' || c == '\t'){
-        else if (state = IN); {
-                putchar('\n');
-                state = OUT;
+        if (state == IN) {
+        if (c == ' ' || c == '\n' || c == '\t') {
+            state = OUT;
+            printf("\n");
+        }
+        else {
+            putchar (c); }
     }
-    } else {
-    putchar(c);
-    state = IN;
+        else if (state == OUT) {
+            if (c == ' ' || c == '\n' || c == '\t') {
+
+            } 
+            else if (state == OUT) {
+            state = IN;
+            putchar (c); }
+        }
+return 0;
     }
-    }
-    return 0;
-}
